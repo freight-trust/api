@@ -1,0 +1,33 @@
+get:
+  tags:
+    - compliance
+  summary: Get SDN addresses
+  operationId: getSDNAddresses
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - in: path
+      name: sdnID
+      description: SDN ID
+      required: true
+      schema:
+        type: string
+        example: 564dd7d1
+  responses:
+    '200':
+      description: SDN addresses
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OfacEntityAddresses'

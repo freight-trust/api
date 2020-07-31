@@ -1,0 +1,20 @@
+description: Physical address from OFAC list
+properties:
+  entityID:
+    type: string
+    example: 2112
+  addressID:
+    type: string
+    example: 201
+  address:
+    type: string
+    example: 123 73th St
+  cityStateProvincePostalCode:
+    type: string
+    example: Tokyo 103
+  country:
+    type: string
+    example: Japan
+  match:
+    type: number
+    example: 0.91

@@ -1,0 +1,24 @@
+description: Metadata and stats about downloaded OFAC data
+properties:
+  SDNs:
+    type: integer
+    example: 7414
+  altNames:
+    type: integer
+    example: 9729
+  addresses:
+    type: integer
+    example: 11747
+  sectoralSanctions:
+    type: integer
+    example: 329
+  deniedPersons:
+    type: integer
+    example: 842
+  bisEntities:
+    type: integer
+    example: 1391
+  timestamp:
+    type: string
+    format: date-time
+    example: '2006-01-02T15:04:05Z07:00'

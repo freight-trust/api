@@ -1,0 +1,9 @@
+get:
+  tags:
+    - compliance
+  summary: Ping compliance
+  description: Check the compliance service is running
+  operationId: ping
+  responses:
+    '200':
+      description: Service is running properly

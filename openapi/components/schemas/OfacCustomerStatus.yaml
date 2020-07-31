@@ -1,0 +1,20 @@
+description: Status properties of an OFAC Customer
+properties:
+  userID:
+    description: User ID provided when updating status
+    type: string
+    example: 349661f9
+  note:
+    description: Optional note from updating status
+    type: string
+    example: Incorrect match
+  status:
+    description: Manually applied status for OFAC Customer
+    type: string
+    enum:
+      - unsafe
+      - exception
+  createdAt:
+    type: string
+    format: date-time
+    example: '2006-01-02T15:04:05Z07:00'

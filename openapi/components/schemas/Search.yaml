@@ -1,0 +1,30 @@
+description: 'Search results containing SDNs, alternate names and/or addreses'
+properties:
+  SDNs:
+    type: array
+    items:
+      $ref: '#/components/schemas/OfacSDN'
+  altNames:
+    type: array
+    items:
+      $ref: '#/components/schemas/OfacAlt'
+  addresses:
+    type: array
+    items:
+      $ref: '#/components/schemas/OfacEntityAddress'
+  sectoralSanctions:
+    type: array
+    items:
+      $ref: '#/components/schemas/SSI'
+  deniedPersons:
+    type: array
+    items:
+      $ref: '#/components/schemas/DPL'
+  bisEntities:
+    type: array
+    items:
+      $ref: '#/components/schemas/BISEntities'
+  refreshedAt:
+    type: string
+    format: date-time
+    example: '2006-01-02T15:04:05Z07:00'

@@ -1,0 +1,33 @@
+get:
+  tags:
+    - compliance
+  summary: Get UI values
+  description: Return an ordered distinct list of keys for an SDN property.
+  operationId: getUIValues
+  parameters:
+    - in: path
+      name: key
+      description: 'SDN property to lookup. Values are sdnType, ofacProgram'
+      required: true
+      schema:
+        type: string
+        example: sdnType
+    - name: limit
+      in: query
+      schema:
+        type: integer
+        example: 25
+      description: Maximum results returned by a search
+  responses:
+    '200':
+      description: Ordered and distinct list of values for an SDN property
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UIKeys'
+    '400':
+      description: Invalid key
+      content:
+        application/json:
+          schema:
+            $ref: ''

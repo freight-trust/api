@@ -1,0 +1,6 @@
+description: Customer or Company watch
+properties:
+  watchID:
+    description: Object representing a customer or company watch
+    type: string
+    example: 08ddba92

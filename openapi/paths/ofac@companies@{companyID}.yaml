@@ -1,0 +1,74 @@
+get:
+  tags:
+    - compliance
+  summary: Get company
+  description: >-
+    Get information about a company, trust or organization such as addresses,
+    alternate names, and remarks.
+  operationId: getOfacCompany
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: companyID
+      in: path
+      description: Company ID
+      required: true
+      schema:
+        type: string
+        example: 1d1c824a
+  responses:
+    '200':
+      description: Company and associated metadata
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OfacCompany'
+put:
+  tags:
+    - compliance
+  summary: Update company
+  description: >-
+    Update a Companies sanction status to always block or always allow
+    transactions.
+  operationId: updateOfacCompanyStatus
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: companyID
+      in: path
+      description: Company ID
+      required: true
+      schema:
+        type: string
+        example: 8d49fd61
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/UpdateOfacCompanyStatus'
+  responses:
+    '200':
+      description: Company status updated

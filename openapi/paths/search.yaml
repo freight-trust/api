@@ -1,0 +1,129 @@
+get:
+  tags:
+    - compliance
+  summary: Search SDNs
+  operationId: search
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: q
+      in: query
+      schema:
+        type: string
+        example: John Doe
+      description: >-
+        Search across Name, Alt Names, and SDN Address fields for all available
+        sanctions lists. Entries may be returned in all response sub-objects.
+    - name: name
+      in: query
+      schema:
+        type: string
+        example: Jane Smith
+      description: >-
+        Name which could correspond to an entry on the SDN, Denied Persons,
+        Sectoral Sanctions Identifications, or BIS Entity List sanctions lists.
+        Alt names are also searched.
+    - name: address
+      in: query
+      schema:
+        type: string
+        example: 123 83rd Ave
+      description: >-
+        Phsical address which could correspond to a human on the SDN list. Only
+        Address results will be returned.
+    - name: city
+      in: query
+      schema:
+        type: string
+        example: USA
+      description: >-
+        City name as desginated by SDN guidelines. Only Address results will be
+        returned.
+    - name: state
+      in: query
+      schema:
+        type: string
+        example: USA
+      description: >-
+        State name as desginated by SDN guidelines. Only Address results will be
+        returned.
+    - name: providence
+      in: query
+      schema:
+        type: string
+        example: USA
+      description: >-
+        Providence name as desginated by SDN guidelines. Only Address results
+        will be returned.
+    - name: zip
+      in: query
+      schema:
+        type: string
+        example: USA
+      description: >-
+        Zip code as desginated by SDN guidelines. Only Address results will be
+        returned.
+    - name: country
+      in: query
+      schema:
+        type: string
+        example: USA
+      description: >-
+        Country name as desginated by SDN guidelines. Only Address results will
+        be returned.
+    - name: altName
+      in: query
+      schema:
+        type: string
+        example: Jane Smith
+      description: >-
+        Alternate name which could correspond to a human on the SDN list. Only
+        Alt name results will be returned.
+    - name: id
+      in: query
+      schema:
+        type: string
+        example: '10517860'
+      description: >-
+        ID value often found in remarks property of an SDN. Takes the form of
+        'No. NNNNN' as an alphanumeric value.
+    - name: limit
+      in: query
+      schema:
+        type: integer
+        example: 25
+      description: Maximum results returned by a search
+    - name: sdnType
+      in: query
+      schema:
+        type: string
+        example: individual
+      description: >-
+        Optional filter to only return SDNs whose type case-insensitively
+        matches.
+    - name: program
+      in: query
+      schema:
+        type: string
+        example: SDGT
+      description: >-
+        Optional filter to only return SDNs whose program case-insensitively
+        matches
+  responses:
+    '200':
+      description: SDNs returned from a search
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Search'

@@ -1,0 +1,42 @@
+post:
+  tags:
+    - compliance
+  summary: Watch OFAC customer
+  description: Add name watch on a OFAC Customer
+  operationId: addOfacCustomerWatch
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: customerID
+      in: path
+      description: Customer ID
+      required: true
+      schema:
+        type: string
+        example: c3cf0f66
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/OfacWatchRequest'
+  responses:
+    '200':
+      description: Customer watch added
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OfacWatch'
+    '404':
+      description: Customer not found

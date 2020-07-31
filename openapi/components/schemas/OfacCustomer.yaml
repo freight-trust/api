@@ -1,0 +1,18 @@
+description: OFAC Customer and metadata
+properties:
+  ID:
+    description: OFAC Customer ID
+    type: string
+    example: 9574756b
+  sdn:
+    $ref: '#/components/schemas/OfacSDN'
+  addresses:
+    type: array
+    items:
+      $ref: '#/components/schemas/OfacEntityAddress'
+  alts:
+    type: array
+    items:
+      $ref: '#/components/schemas/OfacAlt'
+  status:
+    $ref: '#/components/schemas/OfacCustomerStatus'

@@ -1,0 +1,37 @@
+delete:
+  tags:
+    - compliance
+  summary: Remove customer watch
+  description: Delete a customer name watch
+  operationId: removeOfacCustomerWatch
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: customerID
+      in: path
+      description: Customer ID
+      required: true
+      schema:
+        type: string
+        example: c3cf0f66
+    - name: watchID
+      in: path
+      description: 'Watch ID, used to identify a specific watch'
+      required: true
+      schema:
+        type: string
+        example: 0c5e215c
+  responses:
+    '200':
+      description: Customer watch removed

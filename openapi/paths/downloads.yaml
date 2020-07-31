@@ -1,0 +1,33 @@
+get:
+  tags:
+    - compliance
+  summary: Get latest downloads
+  description: Return list of recent downloads of list data
+  operationId: getLatestDownloads
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: limit
+      in: query
+      schema:
+        type: integer
+        example: 25
+      description: Maximum results returned by a search
+  responses:
+    '200':
+      description: Recent timestamps and counts of parsed objects
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Downloads'

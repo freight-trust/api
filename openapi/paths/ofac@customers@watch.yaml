@@ -1,0 +1,42 @@
+post:
+  tags:
+    - compliance
+  summary: Watch customer
+  description: >-
+    Watch a customer by its name. The match percentage will be included in the
+    webhook's JSON payload.
+  operationId: addOfacCustomerNameWatch
+  parameters:
+    - name: X-Request-ID
+      in: header
+      description: >-
+        Optional Request ID allows application developer to trace requests
+        through the systems logs
+      schema:
+        type: string
+        example: 94c825ee
+    - name: X-User-ID
+      in: header
+      description: Optional User ID used to perform this search
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: Individual name used to match and send watch notifications
+      schema:
+        type: string
+        example: Jane Smith
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/OfacWatchRequest'
+  responses:
+    '200':
+      description: Customer watch applied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OfacWatch'

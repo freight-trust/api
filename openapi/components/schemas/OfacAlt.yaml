@@ -1,0 +1,20 @@
+description: Alternate name from OFAC list
+properties:
+  entityID:
+    type: string
+    example: 306
+  alternateID:
+    type: string
+    example: 220
+  alternateType:
+    type: string
+    example: aka
+  alternateName:
+    type: string
+    example: NATIONAL BANK OF CUBA
+  alternateRemarks:
+    type: string
+    example: Extra information
+  match:
+    type: number
+    example: 0.91
