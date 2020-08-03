@@ -1,0 +1,11 @@
+type: array
+description: List of events for shipment journey.
+items:
+  anyOf:
+    - $ref: "#/components/schemas/transportEvent"
+    - $ref: "#/components/schemas/shipmentEvent"
+    - $ref: "#/components/schemas/equipmentEvent"
+  discriminator:
+    propertyName: eventType
+required:
+  - events

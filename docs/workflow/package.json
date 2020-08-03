@@ -1,0 +1,12 @@
+{
+  "name": "@freight-trust/api-workflow",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "private": true,
+  "scripts": {
+    "start": "openapi preview-docs",
+    "build": "openapi bundle -o dist",
+    "test": "openapi validate"
+  }
+}
