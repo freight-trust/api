@@ -1,7 +1,7 @@
 meta:
-  title: Redocly Training
-  description: The best API documentation generator ever.
-  siteUrl: https://portal-demo.redoc.ly
+  title: API Portal
+  description: API Documentation
+#  siteUrl: 
 headerIcon: ./images/logo.png
 enableToc: true
 oasDefinitions:
@@ -18,25 +18,24 @@ stylesheets:
 #  - ./static/intercom.js
 nav:
 
-  - label: Training exercises
+  - label: API
     page: developer-portal/index.md
 
   - label: External docs
-    href: https://docs.redoc.ly/developer-portal/introduction/
-
+    href: '#'
   - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2020. All right reserved.
+  copyrightText: Copyright © FreightTrust and Clearing, Inc. All right reserved.
   columns:
     - group: Legal
       items:
         - label: Terms of Use
-          href: 'https://redoc.ly/subscription-agreement/'
+          href: '#'
         - label: Privacy Notice
-          href: 'https://redoc.ly/privacy-policy/'
+          href: '#'
         - label: Cookie Notice
-          href: 'https://redoc.ly/privacy-policy/'
+          href: '#'
     - group: Support
       items:
         - label: FAQ
