@@ -1,6 +1,0 @@
-{ properties =
-  { organizationId.type = "string"
-  , requestParameters.`$ref` = "./RequestParameters.yaml"
-  , summary.`$ref` = "./UsageSummary.yaml"
-  }
-}

@@ -1,3 +1,0 @@
-{ enum = [ "OCEAN_EVENTS", "ORIGIN_INLAND_EVENTS", "DESTINATION_INLAND_EVENTS" ]
-, type = "string"
-}
